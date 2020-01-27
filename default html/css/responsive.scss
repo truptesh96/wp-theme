@@ -1,0 +1,22 @@
+@media screen and (min-width: $tablet) {
+	body{ font-size: 14px; }
+	form, .form{ 
+		input, textarea{ font-size: 14px; }
+	}
+}
+
+@media screen and (min-width: $desktop) {
+	.container{ max-width: 83vw; }
+	.p-flex{
+		.w2{ width: 50%; }.w3{ width: 33.3333%; }.w4{ width: 25%; }.w5{ width: 20%; }
+		.wp25{width: 25%;}.wp75{width: 75%;}.wp40{width: 40%;}.wp60{width: 60%;}.wp70{width: 70%;}.wp30{width: 30%;}
+	}
+}
+
+@media screen and (min-width: $lg-desktop) {
+	.container{ max-width: 1500px; }
+	body{ font-size: 18px; }
+	form, .form{ display: block; max-width: 100%;
+		input, textarea{ font-size: 18px; }
+	}
+}

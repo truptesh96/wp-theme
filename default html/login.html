@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="https://fonts.googleapis.com/css?family=Lato|Merriweather&display=swap" rel="stylesheet">
+	<link href="css/style.css" rel="stylesheet">
+	<script src="js/jq-min.js"></script>
+	<script src="js/custom.js"></script>
+	<title>Portfolio</title>
+	</head>
+	<body class="login-page">
+			<header class="txt-center animate">
+				<a class="logo" href="index.html"><span class="fade-in">Eveal</span></a>	
+			</header>
+			<section class="dis-tab content">
+			<div class="dis-cell">
+			<form class="login-form form fade-in" method="POST" action="login.php">
+				<fieldset>
+					<label>Email</label>
+					<input type="email" name="user_email">
+				</fieldset>
+				<fieldset>
+					<label>Password</label>
+					<input type="password" name="user_password">
+				</fieldset>
+				<fieldset>
+					<input class="pre-button" type="submit" value="Login">
+				</fieldset>
+			</form>
+
+			<div class="error" error-type="warning">
+				<div class="error-type"></div>
+			</div>
+			</div>
+			</section>
+	</body>
+	<script>
+		$(".login-page .content").outerHeight(($(window).height() - $("header").outerHeight()));
+	</script>
+</html>

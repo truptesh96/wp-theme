@@ -1,0 +1,41 @@
+@import "reset.scss";
+@import "header.scss";
+@import "footer.scss";
+@import "anim.scss";
+@import "products.scss";
+@import "gallery.scss";
+@import "slick.scss";
+
+/*---------------- Typography -------------------*/
+.container{margin: 0 auto; padding: 0 15px; }
+p{ line-height: 1.4; margin: 0 0 15px; 
+	&:last-child{ margin : 0; }
+	&:last-child{ margin: 0 0 15px; }
+}
+.page-heading, .section-heading , h1,h2,h3,h4,h5,h6{ font-family: $heads; margin: 0 0 20px; line-height: 1; }
+@import "responsive.scss";
+
+/*---------------------- Specific for theme -----------------------*/
+.pro-title{ font-size: 0px; text-align: center; padding: 30px 0; line-height: 1; position: relative; 
+	&:before{ content: attr(data-title); font-size: 30px; background-color: #fff; z-index: 2; padding: 0 10px; }
+	&:after{ content: ""; width: 100%; height: 2px; background: #000; z-index: 1; }
+	&:before, &:after{ left: 50%; top: 50%; transform: translate(-50%,-50%); display: block; position: absolute; }
+}
+
+.main-head{ position: relative; background-repeat: no-repeat; background-attachment: fixed;
+	padding: 10vh 0; background-position: center; 
+	@media screen and (min-width: $tablet){ padding: 20vh 0; }
+	@media screen and (min-width: $desktop){ padding: 35vh 0; background-position: left center; }
+
+	h1{ font-size: 0;
+		&:before, &:after{ display: block; position: absolute; }
+		&:before{ content:''; z-index: 9; background: #1488CC; opacity: 0.5; top: 0; left: 0; height: 100%; width: 100%; 
+		background: #FC466B; background: -webkit-linear-gradient(to right, #3F5EFB, #FC466B); background: linear-gradient(to right, #3F5EFB, #FC466B); 
+		}
+		&:after{ content: attr(data-title); z-index: 10; line-height: 1; color: #fff; font-size: 6vh; top: 50%; left: 10%; transform: translateY(-50%); 
+			text-transform: capitalize;
+			@media screen and (min-width: $tablet){ font-size: 8vh; }
+			@media screen and (min-width: $desktop){ font-size: 12vh; }
+		}
+	}
+}

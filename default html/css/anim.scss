@@ -1,0 +1,22 @@
+/*------------- Animations -----------*/
+/*---- For best results follow below guidelines.
+Do not use transform for same class in which animation class is assigned.
+Do not add class of animation into sections.
+------*/
+@keyframes anim_fadetop{ 0%{ transform: translateY(-20%); } 100%{ transform: translate(0); } }
+@keyframes anim_right{ 0%{ transform: translate(20%); } 100%{ transform: translate(0); } }
+@keyframes anim_zoom{ 0%{ transform: scale(1.25); } 100%{ transform: scale(1); } }
+@keyframes anim_fadeIn{ 0%{ opacity: 0; } 100%{ opacity: 1; } }
+@keyframes anim_left{ 0%{ transform: translateX(-20%); } 100%{ transform: translate(0); } }
+section, header, footer{
+	.fade-zoom,.fade-right,.fade-left,.fade-in{ opacity: 0; }
+	&.animate{  
+		.fade-zoom,.fade-right,.fade-left, .fade-in{ opacity: 1; }
+		.fade-zoom{ animation: anim_zoom 1s ease; }
+		.fade-right{ animation: anim_right 1s ease; }
+		.fade-left{ animation: anim_left 1s ease; }
+		.fade-in{ animation: anim_fadeIn 1s ease; }
+		.fade-top{ animation: anim_fadetop 1s ease; }
+		&.sticky{ animation: anim_fadetop 0.5s ease; }
+	}
+}

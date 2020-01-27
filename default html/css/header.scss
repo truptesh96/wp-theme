@@ -1,0 +1,75 @@
+@keyframes logo_anim{
+	0%{ background: -webkit-linear-gradient(to left, #f00000, #66ff00); 
+		background: linear-gradient(to left, #f00000, #66ff00); 
+	}
+
+	100%{ background: -webkit-linear-gradient(to left, #ffdd00, #00ff00); 
+		background: linear-gradient(to left, #ffdd00, #00ff00); 
+	}
+} 
+header{ background: #fff; position: relative;
+	.logo{ line-height: 1.5; font-weight: 900; font-size: 40px; position: relative; background-blend-mode: multiply; text-decoration: none; color: #ff6060;
+		&:before{ content: ""; height: 100%; position: absolute; left: 0; top: 0; width: 100%;
+		background: #cade22;mix-blend-mode: soft-light; animation: logo_anim 2s linear infinite ;
+		}
+
+		&:first-letter{ transform: rotate(180deg); }
+	}
+
+	.site-main{ display: inline-block; max-width: calc(100% - 30px); width: 100%; vertical-align: middle; }
+
+	.site-navigation{ display: inline-block; width: 25px;
+		.toggle-nav{ background: $dark; position: relative; height: 4px; width: 25px; transition: 1s all ease; 
+			&:before, &:after{ content:""; display: block; position: absolute; height: 4px; width: 25px; 
+			left: 0; transition: 0.5s all ease; }
+			&:before{ top: 10px; background: $m-dark; }
+			&:after{ top: -10px; background: $m-dark; }
+
+			&.toggled{ background: transparent; transform: rotate(-180deg); 
+				&:before, &:after{ top: 0px; background: $dark; } 
+				&:before{ transform: rotate(135deg); }
+				&:after{ transform: rotate(-135deg); }
+				+ .nav-list{ padding: 20px 15px; width: 100%; background: #f4f4f4; min-height: 100vh; z-index: 99;
+				left: 0; transition: 1s all ease; display: block; top: 100%; position: absolute; box-sizing: border-box;
+				li{ display: block;
+					a{ display: block; color: $m-dark; padding: 0 0 10px 0;
+						&:hover{ color: $link-color; }
+					}
+				}
+				}	
+			}
+		}
+		.nav-list{ display: none;}
+	}
+
+	&.sticky{ position: fixed; top: 0; left: 0; width: 100%; box-shadow: 2px 2px 5px #f4f4f4; z-index: 99;
+		.site-navigation{ margin : 0; }
+	}
+}
+
+
+
+@media screen and (min-width: $tablet) {
+	header{ 
+
+	}
+}
+
+@media screen and (min-width: $desktop) {
+	header{
+		.site-main{ max-width: 240px; }
+		.site-navigation{ position: relative; width: 100%; max-width: calc(100% - 245px); text-align: right;
+			.toggle-nav{ display: none; }
+			.nav-list{ left: inherit; display: inline-block;
+				li{ display: inline-block; 
+					a{ padding : 10px 20px; display: block; }
+				}
+			}
+		}
+		.p-flex{ align-items: center; }
+	}
+}
+
+@media screen and (min-width: $lg-desktop) {
+
+}

@@ -1,0 +1,26 @@
+footer{ padding-top: 30px; background: #f4f4f4;
+	.site-credit{ padding: 20px; color: $m-dark; line-height: 1; text-align: center; }
+	span{ display: block; }
+	.footer-col{ margin-bottom: 15px; flex-grow: 1; padding-right: 15px;
+		&:last-child{ margin-bottom : 0; flex-grow: 1.25; }
+		h4{ text-transform: uppercase; letter-spacing: 1.5px; }
+		a{ color: $m-dark;
+			&:hover{ color: blue; }
+		}
+		span, address{ line-height: 1.5; }
+	}
+	&.sticky{ position: fixed; width: 100%; bottom: 0; left: 0; }
+}
+ 
+@media screen and (min-width: $tablet) {
+	footer{ 
+	}
+}
+
+@media screen and (min-width: $desktop) {
+	
+}
+
+@media screen and (min-width: $lg-desktop) {
+
+}
