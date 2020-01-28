@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="slick.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Noto+Serif+KR|Questrial" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="slick.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Comfortaa|Merriweather" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+</head>
+<body>
+  
+  <!-- header section -->
+  <header class="header" data-aos="fade-down" data-aos-duration="1500" >
+    <div class="head_top">
+      <div class="container">
+      <a class="mobile-only menu-toggle" href="javascript:void(0)"></a>
+      <div class="site-logo"><h1 class="logo">parkline</h1></div>
+      <ul class="site-menu">
+        <li><a href="javascript:void(0)" dest="about">ABOUT</a></li>
+        <li><a href="javascript:void(0)" dest="services">SERVICES</a></li>
+        <li><a href="javascript:void(0)" dest="footer">CONTACT</a></li>
+      </ul>
+      </div>
+    </div>
+ 
+  </header>
+  <!-- header section ends -->
+
+  <!-- banner section -->
+    <section class="main-slider" >
+    <div class="item youtube">
+      <iframe class="embed-player slide-media" width="980" height="520" src="https://www.youtube.com/embed/6pxRHBw-k8M?enablejsapi=1&controls=0&fs=0&iv_load_policy=3&rel=0&showinfo=0&loop=1" frameborder="0" allowfullscreen></iframe>
+    </div>
+    </section>
+  <!-- banner section ends -->
+
+  
+  <!-- section grid3-->
+  <section class="new-products">
+    <div class="container">
+    <h2>New Arrivals</h2>  
+    <div class="box-3">
+      <div class="box" data-aos-duration="900"  data-aos="fade-zoom-in" ><img src="img/dummy.jpg" /></div>
+        <div class="box" data-aos-duration="900" data-aos="fade-zoom-in" data-aos-delay="500"><img src="img/dummy.jpg" /></div>
+        <div class="box" data-aos-duration="900" data-aos="fade-zoom-in" data-aos-delay="1000"><img src="img/dummy.jpg" /></div>
+    </div>
+  </div>
+  </section>
+
+  <!-- About section ends -->
+  <section class="about-block about  dis-tab"  data-aos-duration="900"  data-aos="fade-zoom-in" >
+    <div class="dis-cell">
+      <div class="container" data-aos="fade-zzom-in" data-aos-duration="900" data-aos-delay="1000" >
+      <h2>About Us</h2>
+      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+    </div>
+    </div>
+  </section>
+  <!-- About section ends -->
+
+  <!-- section grid3-->
+  <section class="services">
+    <div class="container">
+    <h2>Services</h2>  
+    <div class="box-3">
+      <div class="box" data-aos-duration="900"  data-aos="fade-zoom-in" ><img src="img/dummy.jpg" /></div>
+        <div class="box" data-aos-duration="900" data-aos="fade-zoom-in" data-aos-delay="500"><img src="img/dummy.jpg" /></div>
+        <div class="box" data-aos-duration="900" data-aos="fade-zoom-in" data-aos-delay="1000"><img src="img/dummy.jpg" /></div>
+    </div>
+  </div>
+  </section>
+
+    <!-- section grid4-->
+    <section class="featured-products">
+      <div class="container">
+      <h2>Featured Products</h2>  
+      <div class="box-4">
+          <div class="box" data-aos-duration="900"  data-aos="fade-zoom-in" ><img src="img/dummy.jpg" /></div>
+          <div class="box" data-aos-duration="900" data-aos="fade-zoom-in" data-aos-delay="500"><img src="img/dummy.jpg" /></div>
+          <div class="box" data-aos-duration="900" data-aos="fade-zoom-in" data-aos-delay="1000"><img src="img/dummy.jpg" /></div>
+          <div class="box" data-aos-duration="900" data-aos="fade-zoom-in" data-aos-delay="1500"><img src="img/dummy.jpg" /></div>
+      </div>
+    </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container">
+        <p class="copyrights">Designed By : <a href="mailto:patel.truptesh1996@gmail.com">Truptesh Patel</a></p>
+      </div>
+    </footer>
+</body>
+    <script>
+
+    AOS.init({once: true});
+
+    var slideWrapper=$(".main-slider"),iframes=slideWrapper.find(".embed-player"),lazyImages=slideWrapper.find(".slide-image"),lazyCounter=0;function postMessageToPlayer(e,a){null!=e&&null!=a&&e.contentWindow.postMessage(JSON.stringify(a),"*")}function playPauseVideo(e,a){var i,s,r,l;if(s=(i=e.find(".slick-current")).attr("class").split(" ")[1],r=i.find("iframe").get(0),i.data("video-start"),"youtube"===s)switch(a){case"play":postMessageToPlayer(r,{event:"command",func:"mute"}),postMessageToPlayer(r,{event:"command",func:"playVideo"});break;case"pause":postMessageToPlayer(r,{event:"command",func:"pauseVideo"})}else"video"===s&&null!=(l=i.children("video").get(0))&&("play"===a?l.play():l.pause())}function resizePlayer(e,a){if(e[0]){var i,s,r=$(".main-slider"),l=r.width(),n=r.height();a=a||16/9;e.each(function(){var e=$(this);l/a<n?(i=Math.ceil(n*a),e.width(i).height(n).css({left:(l-i)/2,top:0})):(s=Math.ceil(l/a),e.width(l).height(s).css({left:0,top:(n-s)/2}))})}}$(function(){slideWrapper.on("init",function(e){e=$(e.currentTarget),setTimeout(function(){playPauseVideo(e,"play")},1e3),resizePlayer(iframes,16/9)}),slideWrapper.on("beforeChange",function(e,a){playPauseVideo(a=$(a.$slider),"pause")}),slideWrapper.on("afterChange",function(e,a){playPauseVideo(a=$(a.$slider),"play")}),slideWrapper.on("lazyLoaded",function(e,a,i,s){++lazyCounter===lazyImages.length&&lazyImages.addClass("show")}),slideWrapper.slick({autoplaySpeed:4e3,lazyLoad:"progressive",speed:600,arrows:!1,dots:!0,cssEase:"cubic-bezier(0.87, 0.03, 0.41, 0.9)"})}),$(window).on("resize.slickVideoPlayer",function(){resizePlayer(iframes,16/9)});
+  
+  function footer_sticky(){
+    $window_Height = $(window).height();
+    $body_Height = $("body").outerHeight();
+    if($window_Height > $body_Height){ $("footer").addClass("sticky-footer"); }
+    if($window_Height < $body_Height){ $("footer").removeClass("sticky-footer"); }
+
+    $(".site-menu").outerWidth( $(".container").outerWidth() - $(".site-logo").outerWidth() );
+  }
+
+  
+  $(document).ready(function(){ 
+
+   $(".site-menu a").click(function(){
+        var dest = "."+$(this).attr("dest");
+        $('html, body').animate({
+        scrollTop: $("body").find(dest).offset().top
+        }, 500);
+    });    
+
+
+  function page_setUp(){
+    if($( window ).width() < 1024){ $(".site-menu").hide(); }
+    else{
+    }
+    
+    $(".menu-toggle").click(function(){ $(".site-menu").toggle(); $(this).toggleClass("active"); });
+  }
+  
+
+  
+  /*--------------------------- Funation Calls -----------------------------------*/
+  footer_sticky(); page_setUp(); 
+  
+  });
+
+
+  $(window).resize(function(){
+    footer_sticky();
+  });
+
+
+$(window).scroll(function() {  
+  var scroll = $(window).scrollTop(); 
+  var sh = $(".main-slider").outerHeight() + 10; 
+  if (scroll > sh) { $("header").addClass("day-head"); }
+  else{ $("header").removeClass("day-head"); }
+});
+
+  </script>
+</html>
