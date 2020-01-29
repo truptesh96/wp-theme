@@ -1,0 +1,39 @@
+@import "reset.scss";
+
+.taps{ background: #000; max-width: 240px; width: 100%; padding : 0; padding : 0;
+	.tap{ color : #fff; text-transform: uppercase; letter-spacing: 1.5px; border-bottom:#fff 2px solid ; list-style: none;
+		.tap_title{ padding : 10px 15px; position: relative; margin: 0;
+			&:before, &:after{ content: ''; height: 2px; width: 10px; background: #fff; display: inline-block;
+				position: absolute; right: 15px; top: 50%; transform: translateY(-50%);
+			}
+			&:hover{ cursor: pointer; }
+			&:after{ transform: translateY(-50%) rotate(90deg); }
+		}
+		.tap_content{ display: none;
+			a{ display: block; text-decoration: none; color : #fff; margin: 0 0 10px; padding: 0 20px; }
+		}
+
+		&.open{
+			.tap_title{ color: #aaffaa;
+				&:before{ background : #aaffaa; }
+				&:after{ opacity : 0; transition: 0.5s all ease; }
+			}
+		}
+	}
+}
+
+
+
+.tabs { 
+	.titles { 
+		.title{ 
+			&.open{  }
+		}
+	}
+		
+    .contents { 
+    	.content { 
+        	&.open{   }
+    	}
+    }
+}

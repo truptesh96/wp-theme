@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <meta name="description" content="Expand business">
+        <meta name="keywords" content="expand bisuness, grow business, digital marketing, get more revenue, make brand">
+        <meta name="author" content="Truptesh Patel">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="style.css" rel="stylesheet">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>   
+    </head>
+    <body itemscope itemtype="http://schema.org/Person">
+        <div class="tabs">
+            <ul class="titles">
+                <li class="title open">Tab1</li>
+                <li class="title">Tab2</li>
+                <li class="title">Tab3</li>
+            </ul>
+            <ul class="contents">
+                <li class="content open">This is content of Tab1</li>
+                <li class="content">This is content of Tab2</li>
+                <li class="content">This is content of Tab3</li>
+            </ul>
+        </div>
+    </body>
+
+    <script>
+        $(".tabs .title").click(function(){
+            $(this).addClass("open").siblings('.title').removeClass("open");
+            $(this).parents('.titles').siblings('.contents').find('.content').removeClass('open').eq($(this).index()).addClass('open');
+        });
+    </script>
+</html>
