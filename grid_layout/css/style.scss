@@ -1,0 +1,86 @@
+@import "reset.scss";
+.main_grid{ display: grid; grid-gap: 1.5vw;
+      grid-template-columns: 1fr 1fr 1fr 1fr; 
+      grid-template-areas:
+        "header header header header"
+        "slider slider slider slider"
+        "sidebar sidebar sidebar sidebar"
+        "content content content content"
+        "footer footer footer footer" ;
+  
+  .slider{ position: relative;
+    grid-area: slider;
+    p, h3{ text-align: left; margin: 0; position: absolute; right: 10%; top: 50%;
+    padding: 2.5vw 2.5vw 2.5vw 5vw; background: rgba(25,25,25,.7); font-size: 3.5vw; color: #aaffaa; }
+  }
+
+  .header{ text-align: center; padding: 0.7vw 0;
+    grid-area: header;
+  }
+  .sidebar{ 
+    grid-area: sidebar;
+  }
+  .content{ 
+    grid-area: content;
+  }
+
+  .footer{ padding: 0.7vw 0;
+    grid-area: footer; text-align: center;
+  }
+}
+
+
+.content{
+  h2{ padding: 0 15px 1.5vw; margin: 0; }
+}
+
+.posts{ padding: 0 15px;
+  article{ padding: 1.5vw; box-shadow: 0 0 5px #a29f9f; border-radius: 0.5vw; 
+    margin-bottom: 25px; }
+}
+
+
+
+
+.taps{ background: #000;
+  .tap{ color : #fff; text-transform: uppercase; letter-spacing: 1.5px; 
+    border-bottom:#fff 2px solid ; list-style: none; border-bottom-right-radius: 15px;
+
+    &:last-child{ border-radius: 0; }
+
+    .tap_title{ padding : 10px 15px; position: relative; margin: 0;
+      &:before, &:after{ content: ''; height: 2px; width: 10px; background: #fff; display: inline-block;
+        position: absolute; right: 15px; top: 50%; transform: translateY(-50%);
+      }
+      &:hover{ cursor: pointer; }
+      &:after{ transform: translateY(-50%) rotate(90deg); }
+    }
+    .tap_content{ display: none;
+      a{ display: block; text-decoration: none; color : #fff; margin: 0 0 10px; padding: 0 20px; }
+    }
+
+    &.open{
+      .tap_title{ color: #aaffaa;
+        &:before{ background : #aaffaa; }
+        &:after{ opacity : 0; transition: 0.5s all ease; }
+      }
+    }
+  }
+}
+
+.tabs { 
+  .titles { 
+    .title{ 
+      &.open{  }
+    }
+  }
+    
+    .contents { 
+      .content { 
+          &.open{   }
+      }
+    }
+}
+
+
+@import "responsive.scss";

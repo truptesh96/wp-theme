@@ -1,0 +1,21 @@
+@media screen and (min-width: 768px) {
+	.main_grid{ 
+		grid-template-areas:
+        "header header header header"
+        "slider slider slider slider"
+        "sidebar content content content"
+        "footer footer footer footer";
+	}
+	.header{ display: grid; grid-template-columns: 20% auto ; text-align: left; }
+}
+
+@media screen and (min-width: 1024px) {
+	.posts{ display: grid; grid-template-columns: 1fr 1fr; grid-gap: 1.5vw; 
+		article{ margin-bottom: 0; }
+	}
+}
+
+
+@media screen and (min-width: 1366px) {
+	
+}

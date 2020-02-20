@@ -1,0 +1,317 @@
+/*--------- Declaration of colors -----------*/
+/*----------- Font Family ----------*/
+body, html {
+  font-family: "Lato", sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 12px;
+  color: #333333;
+  overflow-x: hidden;
+}
+body.no-scroll {
+  overflow: hidden;
+  height: 100vh;
+}
+
+/*------------- Reset Browsers --------------*/
+p {
+  margin: 0 0 10px;
+  line-height: 1.4;
+}
+
+ul, ol {
+  margin: 0;
+  padding: 0;
+}
+ul li, ol li {
+  list-style-position: inside;
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+.toggle-nav {
+  padding: 0;
+  outline: 0;
+  border: none;
+}
+
+button, fieldset, div, section, li, article {
+  line-height: 1;
+}
+
+figure {
+  margin: 0;
+}
+
+a, button, input[type=submit] {
+  transition: 0.5s all ease;
+}
+a:hover, button:hover, input[type=submit]:hover {
+  cursor: pointer;
+}
+a:active, a:focus, button:active, button:focus, input[type=submit]:active, input[type=submit]:focus {
+  outline: none;
+}
+
+/*--------------- Popup Design ------------------*/
+.model {
+  position: fixed;
+  top: 0;
+  left: 0;
+  max-width: 100vw;
+  max-height: 100vh;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+}
+.model .model_content {
+  max-width: 90vw;
+  max-height: 90vh;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.model .model_content .video-frame {
+  width: 100%;
+  height: 100%;
+}
+.model .d_model {
+  color: #fff;
+  text-transform: uppercase;
+  top: 0;
+  display: inline-block;
+  right: 0;
+  padding: 10px 15px;
+}
+
+/*-------------- Common Classes -------------------*/
+/*--------- Display -------*/
+.dis_tab {
+  display: table;
+  width: 100%;
+  height: 100%;
+}
+
+.dis_cell {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.dis_none {
+  display: none;
+}
+
+.p_flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+.p_flex * {
+  box-sizing: border-box;
+}
+.p_flex .w2, .p_flex .w3, .p_flex .w4, .p_flex .w5, .p_flex .wp25, .p_flex .wp75, .p_flex .wp40, .p_flex .wp60, .p_flex .wp70, .p_flex .wp30 {
+  width: 100%;
+}
+
+/*-------------- Alignments -------------------*/
+.txt_center {
+  text-align: center;
+}
+
+.txt_left {
+  text-align: left;
+}
+
+.txt_just {
+  text-align: justify;
+}
+
+.txt_right {
+  text-align: right;
+}
+
+/*------------------- Forms --------------------*/
+form, .form {
+  display: block;
+  max-width: 100%;
+}
+form input, form textarea, .form input, .form textarea {
+  border: none;
+  border-bottom: 2px solid #333333;
+  margin-bottom: 1rem;
+  display: block;
+  max-width: 100%;
+  width: 100%;
+  padding: 10px 20px;
+  box-sizing: border-box;
+  color: #333333;
+  font-size: 12px;
+  letter-spacing: 1px;
+}
+form input:focus, form textarea:focus, .form input:focus, .form textarea:focus {
+  outline: none;
+  border-color: #666666;
+  transition: 0.5s all ease;
+}
+form textarea, .form textarea {
+  min-height: 240px;
+}
+form input[type=submit], .form input[type=submit] {
+  max-width: 160px;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  padding: 18px 20px;
+  border: none;
+  background: #4776E6;
+  background: linear-gradient(to right, #8E54E9, #4776E6);
+  color: #fff;
+}
+form input[type=submit]:hover, .form input[type=submit]:hover {
+  background: #FF512F;
+  background: linear-gradient(to right, #DD2476, #FF512F);
+  color: #fff;
+  box-shadow: 2px 2px 5px #666666;
+}
+
+.main_grid {
+  display: grid;
+  grid-gap: 1.5vw;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-areas: "header header header header" "slider slider slider slider" "sidebar sidebar sidebar sidebar" "content content content content" "footer footer footer footer";
+}
+.main_grid .slider {
+  position: relative;
+  grid-area: slider;
+}
+.main_grid .slider p, .main_grid .slider h3 {
+  text-align: left;
+  margin: 0;
+  position: absolute;
+  right: 10%;
+  top: 50%;
+  padding: 2.5vw 2.5vw 2.5vw 5vw;
+  background: rgba(25, 25, 25, 0.7);
+  font-size: 3.5vw;
+  color: #aaffaa;
+}
+.main_grid .header {
+  text-align: center;
+  padding: 0.7vw 0;
+  grid-area: header;
+}
+.main_grid .sidebar {
+  grid-area: sidebar;
+}
+.main_grid .content {
+  grid-area: content;
+}
+.main_grid .footer {
+  padding: 0.7vw 0;
+  grid-area: footer;
+  text-align: center;
+}
+
+.content h2 {
+  padding: 0 15px 1.5vw;
+  margin: 0;
+}
+
+.posts {
+  padding: 0 15px;
+}
+.posts article {
+  padding: 1.5vw;
+  box-shadow: 0 0 5px #a29f9f;
+  border-radius: 0.5vw;
+  margin-bottom: 25px;
+}
+
+.taps {
+  background: #000;
+}
+.taps .tap {
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  border-bottom: #fff 2px solid;
+  list-style: none;
+  border-bottom-right-radius: 15px;
+}
+.taps .tap:last-child {
+  border-radius: 0;
+}
+.taps .tap .tap_title {
+  padding: 10px 15px;
+  position: relative;
+  margin: 0;
+}
+.taps .tap .tap_title:before, .taps .tap .tap_title:after {
+  content: "";
+  height: 2px;
+  width: 10px;
+  background: #fff;
+  display: inline-block;
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.taps .tap .tap_title:hover {
+  cursor: pointer;
+}
+.taps .tap .tap_title:after {
+  transform: translateY(-50%) rotate(90deg);
+}
+.taps .tap .tap_content {
+  display: none;
+}
+.taps .tap .tap_content a {
+  display: block;
+  text-decoration: none;
+  color: #fff;
+  margin: 0 0 10px;
+  padding: 0 20px;
+}
+.taps .tap.open .tap_title {
+  color: #aaffaa;
+}
+.taps .tap.open .tap_title:before {
+  background: #aaffaa;
+}
+.taps .tap.open .tap_title:after {
+  opacity: 0;
+  transition: 0.5s all ease;
+}
+
+@media screen and (min-width: 768px) {
+  .main_grid {
+    grid-template-areas: "header header header header" "slider slider slider slider" "sidebar content content content" "footer footer footer footer";
+  }
+
+  .header {
+    display: grid;
+    grid-template-columns: 20% auto;
+    text-align: left;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .posts {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 1.5vw;
+  }
+  .posts article {
+    margin-bottom: 0;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
