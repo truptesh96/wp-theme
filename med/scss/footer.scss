@@ -1,0 +1,21 @@
+/******** Footer ******/
+.site_footer{ background: #fffffe; padding: 100px 0 40px; margin-top: 40px; 
+	&.sticky{ position: fixed; bottom: 0; left: 0; width: 100%; }
+	
+	li{ list-style: none; }
+}
+
+/** Social Links **/
+.social_links{
+	.fb{  }
+	.youtube{  }
+	.insta{  }
+}
+
+.footer_col{ 
+	h4{ text-transform: uppercase; font-family: "Raleway", sans-serif; }
+}
+.entry-footer{ background: #fff; padding: 15px; border: 1.5px solid #000; margin-bottom: 20px;
+	span.cat-links { display: block; margin: 0 0 15px; }
+	.tags-links a{  }
+}

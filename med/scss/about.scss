@@ -1,0 +1,22 @@
+.about{ max-width: 1920px; padding: 0 15px; 
+	.d_grid{ grid-gap: 0; position: relative;
+			img{ display: block; width: 100%; }
+	}
+}
+
+.intro{ 
+	.content{ padding: 20px; max-width: 240px; position: absolute; top: 50%; left: 50%; width: 100%;
+		transform: translate(-50%,-50%);
+		h2{ text-transform: uppercase; }
+	}
+	}
+
+@media only screen and (min-width: $desktop) { 
+	.about{ padding: 0; 
+		.colm { position: relative; }	
+	}
+
+	.intro{  
+		.content{  max-width: 450px; }
+	}
+}
