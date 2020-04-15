@@ -1,22 +1,36 @@
+.page-template-about .site_footer{ margin-top: 0; }
 .about{ max-width: 1920px; padding: 0 15px; 
 	.d_grid{ grid-gap: 0; position: relative;
-			img{ display: block; width: 100%; }
+		img{ display: block; width: 100%; }
+		.features{ grid-gap: 25px; 
+			img{ margin: 0 auto; max-height: inherit; width: auto; margin: 0 auto 20px; }
+		}
 	}
 }
-
-.intro{ 
-	.content{ padding: 20px; max-width: 240px; position: absolute; top: 50%; left: 50%; width: 100%;
+.intro{ position: relative; margin-bottom: 20px;  
+	.content{ max-width: 90%; position: absolute; top: 50%; left: 50%; width: 100%;
 		transform: translate(-50%,-50%);
 		h2{ text-transform: uppercase; }
 	}
-	}
+	p{ font-size: 16px; margin-bottom: 0; }
+	&:before{ content: ''; height: 100%; width: 100%; background: rgba(255,255,255,.5);
+	position: absolute; }
+}
 
-@media only screen and (min-width: $desktop) { 
+@media only screen and (min-width: $tablet) { 
 	.about{ padding: 0; 
 		.colm { position: relative; }	
 	}
+	.d_grid.col2{ grid-template-columns: 1fr 1fr;}
+	.intro{ margin-bottom: 0;
+		.content{ padding: 20px; max-width: 450px; }
+		&:before{ height: 0; }
+		p{ font-size: 18px; }
+	}	
+}
 
-	.intro{  
-		.content{  max-width: 450px; }
+@media only screen and (min-width: $desktop) {
+	.intro{ 
+		p{ font-size: 20px; }
 	}
 }

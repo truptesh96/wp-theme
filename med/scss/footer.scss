@@ -1,8 +1,12 @@
 /******** Footer ******/
-.site_footer{ background: #fffffe; padding: 100px 0 40px; margin-top: 40px; 
+.site_footer{ background: #f9f9f9; padding: 40px 0 20px; margin-top: 40px; 
 	&.sticky{ position: fixed; bottom: 0; left: 0; width: 100%; }
-	
+	ul{ margin-bottom: 0; }
 	li{ list-style: none; }
+	a{ color: #444; padding : 5px 0 5px; 
+		&:before{ margin-right:7px ; display: inline-block; vertical-align: middle; }
+		&:hover{ color: #a70452; }
+	}
 }
 
 /** Social Links **/
@@ -13,7 +17,10 @@
 }
 
 .footer_col{ 
-	h4{ text-transform: uppercase; font-family: "Raleway", sans-serif; }
+	h4{ text-transform: uppercase; font-family: "Raleway", sans-serif; display: block; }
+	address, ul{ display: none; 
+		@media only screen and (min-width: $tablet) { display: block; }
+	}
 }
 .entry-footer{ background: #fff; padding: 15px; border: 1.5px solid #000; margin-bottom: 20px;
 	span.cat-links { display: block; margin: 0 0 15px; }
