@@ -1,0 +1,126 @@
+.home{
+	section{ margin: 60px 0;
+		>h2{ text-transform: uppercase; text-align: center; font-size: 40px; 
+		}
+		
+		&::last-child{ margin-bottom: 0; }
+	}
+}
+
+/*--------- Banner ---------*/
+@keyframes fade{
+	0%{ opacity: 0.5; }
+	50%{ opacity: 0.5; }
+	100%{ transform: 0; opacity: 1; }
+}
+
+@keyframes fade_left{
+	0%{ transform: translateX(50%); opacity: 0.3; }
+	50%{ opacity: 0.5; }
+	100%{ transform: 0; opacity: 1; }
+}
+
+.home .hero{ margin-top: 0; }
+.hero{ margin-top: 0;
+	article{ font-size: 0;
+		img , .content{ opacity: 0.5; }
+		.content{ background: rgba(255,255,255,0.9); padding: 20px; 
+			h3, a{ text-transform: uppercase; }
+		}
+		@media only screen and (min-width: $desktop) { 
+			img{ max-width: 65%; display: inline-block; vertical-align: middle; }
+			.content{ max-width: 35%; display: inline-block; vertical-align: middle; transform: translateX(-150px); }
+		}
+		&.slick-current{
+			img { opacity: 1; animation: 1s fade ease; } 
+			.content{ animation: 1.5s fade_left ease; opacity: 1; }
+		}
+	}
+}
+/*--------- Banner Ends---------*/
+
+/*--- first txt section --*/
+.f_txt{ padding: 100px 0; background-repeat: no-repeat; background-size: cover; 
+	@media only screen and (min-width: $tablet) { background-size: 50% auto; 
+		background-position: right;
+	}
+	p{ font-size: 18px; color: #fff; text-align: center; max-width: 320px; margin: 0 auto;
+		@media only screen and (min-width: $tablet) { color: #000; margin:0 ; text-align: left; }
+		@media only screen and (min-width: $desktop) { max-width: 450px; }
+	}
+}
+
+/*--------- Intro Section ---------*/
+.intro{
+	.left{
+		h2{ text-transform: uppercase; font-size: 35px;
+			span{ display: block; font-size: 130%; color: #8eff6a; }
+		}
+	}
+	.right{ 
+		h3{ text-transform: uppercase; font-size: 22px; 
+		}
+		p{ font-size: 22px; }
+	}
+	@media only screen and (min-width: $desktop) { 
+		.left{ max-width: 320px; }
+		.call_sec h3{  max-width: 140px; margin: 0; }
+		.call_sec a{ margin: 0; max-width: calc(100% - 145px); font-size: 22px; font-weight: 900; }
+		.right{ max-width: calc(100% - 325px); }
+		.call_sec h3, .call_sec a, .right , .left{ display: inline-block; width: 100%; vertical-align: middle; }
+	}
+}
+/*--------- Intro Ends ---------*/
+
+/*----------- Our Team -----------*/
+@keyframes floaty{
+	0%{ transform: translate(0); }
+	50%{ transform: translate(3px,3px); }
+	100%{ transform: translate(0); }
+}
+.team{ 
+	.members{ background-repeat: no-repeat; background-size: cover; background-position: bottom center; 
+	position: relative; padding: 100px 0; background-attachment: fixed; position: relative;
+	&:before{ content:''; background: linear-gradient(-45deg,rgba(255, 255, 255, 0.1), rgba(200, 255, 200, 0.4), rgba(25, 25, 25, 0.4)); 
+	height: 100%; width: 100%; top: 0; left: 0; position: absolute; }
+	}
+
+	.member{ padding: 20px; text-align: center; animation: 3s floaty linear infinite;
+		img{ height: 200px; width: 200px; display: block; border-radius: 50%; margin: 0 auto 20px; }
+		&:nth-child(4n-1){ animation-delay: 0.5s; }
+		&:nth-child(3n-1){ animation-delay: 1s; }
+		h4, span{ letter-spacing: 2px; text-transform: uppercase; text-shadow: 0 0 3px #fff;
+		 font-weight: 600; }
+		h4{ text-transform: uppercase; text-shadow: 0 0 3px #fff; margin-bottom: 10px; }
+		span{ color: #000; }
+	}
+}
+/*----------- Our Team Ends -----------*/
+
+
+/*----------- Testimonials -----------*/
+.review_slider{ border: 2px solid #000;
+	.slick-prev, .slick-next{ top: -25px; right: 25px; background-color: #fff; }
+	.slick-prev{ right: 75px; }
+	.review{ padding: 20px; text-align: center; 
+		img{ height: 125px; margin: 0 auto 15px; display: block; }
+	}
+
+	.slick-dots{ bottom: -20px; width: 100%; text-align: center;
+		li{ display: inline-block; 
+			button{ font-size: 0; height: 10px; width: 10px; border-radius: 50%; 
+				padding:0; margin-right: 5px; background: #fff;
+			}
+		}
+	}
+	.slick-dots li.slick-active button{ background: #f19322; transition: 0.7s all ease;
+	box-shadow: 0 0 5px #f19322; border: transparent; }
+}
+
+@media only screen and (min-width: $desktop) { 
+	.review{ padding: 40px 20px; }
+	figure, .cont{ display: inline-block; vertical-align: middle; }
+	.cont{ padding: 20px 0 0 10px; text-align: left; max-width: calc(100% - 130px); }
+}
+
+/*----------- Testimonials Ends -----------*/

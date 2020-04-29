@@ -1,0 +1,32 @@
+/******** Footer ******/
+.site_footer{ background: linear-gradient(45deg,#101010, #333); padding: 40px 0 20px; margin-top: 40px;
+	&.sticky{ position: fixed; bottom: 0; left: 0; width: 100%; }
+	ul{ margin-bottom: 0; }
+	li{ list-style: none; margin-bottom: 0; }
+	a{ color: #888; padding : 5px 0 5px; 
+		&:before{ margin-right:7px ; display: inline-block; vertical-align: middle; }
+		&:hover{ color: #f19322; transition: 0.7s all ease; }
+	}
+	.copyright{ padding: 10px 0 ; margin: 0; color: #fff; }
+}
+
+/** Social Links **/
+.social_links{
+	.fb{  }
+	.youtube{  }
+	.insta{  }
+}
+
+.footer_col{ 
+	h4{ text-transform: uppercase; font-family: "Raleway", sans-serif; display: block; color: #f19322; 
+		&:first-letter{ font-size: 125%; }
+	}	
+	address, ul{ display: none; 
+		@media only screen and (min-width: $tablet) { display: block; }
+	}
+	address{ pointer-events: none; line-height: 1.5; }
+}
+.entry-footer{ background: #fff; padding: 15px; border: 1.5px solid #000; margin-bottom: 20px;
+	span.cat-links { display: block; margin: 0 0 15px; }
+	.tags-links a{  }
+}

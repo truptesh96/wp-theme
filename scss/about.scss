@@ -1,0 +1,34 @@
+.page-template-about .site_footer{ margin-top: 0; }
+.about .colm{ max-width: 1920px; padding: 0 15px; 
+	.d_grid{ position: relative;
+		img{ display: block; width: 100%; }
+	}
+}
+.intro{ position: relative; margin-bottom: 20px; 
+	.content{ max-width: 90%; position: absolute; top: 50%; left: 50%; width: 100%;
+		transform: translate(-50%,-50%);
+		h2{ text-transform: uppercase; }
+	}
+	p{ font-size: 16px; margin-bottom: 0; }
+	&:before{ content: ''; height: 100%; width: 100%; background: rgba(255,255,255,.5);
+	position: absolute; }
+}
+
+@media only screen and (min-width: $tablet) { 
+	.about{ padding: 0; 
+		.d_grid{ grid-gap: 0; }
+		.colm { position: relative; }	
+	}
+	.d_grid.col2{ grid-template-columns: 1fr 1fr;}
+	.intro{ margin-bottom: 0; position: relative;
+		.content{ padding: 20px; max-width: 450px; position: relative; }
+		&:before{ height: 0; }
+		p{ font-size: 18px; }
+	}	
+}
+
+@media only screen and (min-width: $desktop) {
+	.about .intro{ 
+		p{ font-size: 20px; }
+	}
+}

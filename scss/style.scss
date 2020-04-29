@@ -1,0 +1,286 @@
+/*!
+Theme Name: Eveal
+Theme URI: http://underscores.me/
+Author: Truptesh
+Author URI: https://github.com/truptesh96
+Description: Description
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: LICENSE
+Text Domain: med
+Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned.
+
+Class Medical is based on Underscores https://underscores.me/, (C) 2012-2020 Automattic, Inc.
+Underscores is distributed under the terms of the GNU GPL v2 or later.
+
+Normalizing styles have been helped along thanks to the fine work of
+Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
+*/
+
+/*---------- Moon Icon -----------*/
+@font-face {
+  font-family: 'icomoon';
+  src:url('fonts/icomoon.ttf');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-fax:before {
+  content: "\e901";
+}
+.icon-email:before {
+  content: "\e900";
+}
+.icon-play:before {
+  content: "\e912";
+}
+.icon-call:before {
+  content: "\e942";
+}
+.icon-phone2:before {
+  content: "\e959";
+}
+.icon-search:before {
+  content: "\e986";
+}
+.icon-earth:before {
+  content: "\e9ca";
+}
+.icon-heart:before {
+  content: "\e9da";
+}
+.icon-play3:before {
+  content: "\ea1c";
+}
+.icon-ctrl:before {
+  content: "\ea50";
+}
+.icon-fb:before {
+  content: "\ea91";
+}
+.icon-insta:before {
+  content: "\ea92";
+}
+.icon-whatsapp:before {
+  content: "\ea93";
+}
+.icon-twitter:before {
+  content: "\ea96";
+}
+/*----------------- Moon icons ends --------------------*/
+@import "scss/slick.css";
+@import "customize.scss";
+/******************** Reset SCSS **********************/
+.skip-link{ display: none; }
+
+body{ background: $body_bg; opacity: 0; 
+  &.no_sroll{ overflow: hidden; 
+    .site_menu.toggled{ z-index: 999; }
+    .site-header .site_logo{ position: fixed; z-index: 9999; top: 0; background: #000; 
+    opacity: 1; transition: 0.5s all ease; }
+  }
+	&.loaded_cust{ opacity: 1; transition: 1s all ease; }
+}
+
+body,html{ margin:0; padding: 0; line-height: 1; }
+figure{ margin: 0; }
+.bg_cover{ background-position: center center; background-repeat: no-repeat; background-size: cover; }
+div, article, ul, li, figure, .site-main, .widget-area, input, textarea{ box-sizing: border-box;
+  &:focus{ outline: none; } 
+}
+img{ max-width: 100%; }
+/*-------- Display Classes ------*/
+.d_tab{ display: table; }
+.d_grid{ display: grid; }
+.d_cell{ display: table-cell; vertical-align: middle; }
+.d_none, .hide{ display: none; }
+
+/*-------- Typography ------*/
+
+ul li, ol li , article, p, a, textarea, input{ font-size: 12px; line-height: 1.4;
+	@media only screen and (min-width: $tablet) { font-size: 14px; }
+	@media only screen and (min-width: $desktop) { font-size: 16px; }
+	@media only screen and (min-width: $xxdesktop) { font-size: 18px; }
+}
+
+/*----- Headings ----*/
+h1, h2, h3{ font-family: 'Raleway', sans-serif; }
+h1, h2, h3, h4, h5, h6{ color: $title_color; line-height: 1.2; }
+.entry-title, .screen-reader-text{ text-transform: uppercase; }
+h1 { margin: 0 0 30px; font-size: 28px; }
+.entry-title a , h2 { font-size: 26px; }
+h2{ margin: 0 0 20px; }
+h3 { margin: 0 0 16.6666666667px; font-size: 24px; }
+h4 { margin: 0 0 15px; font-size: 22px; }
+h5 { margin: 0 0 14px; font-size: 20px; }
+h6 { margin: 0 0 14px; font-size: 18px; }
+
+@media only screen and (min-width: $desktop) {
+  	@for $i from 1 through 6 {
+	  	h#{$i} { margin: 0 0 30px/$i + 10; }
+	}
+}
+
+p{ color: $paragraph_color; margin: 0 0 20px; }
+a{ color: $link_color; text-decoration: none; display: inline-block; vertical-align: middle;
+	&:hover{ color: $link_hover_color; transition: 0.5s all ease; }
+	&:active{ color: $link_active_color; }
+	&:visited{ color: $link_visited_color; }
+}
+
+article{ color: $atricle_color; }
+.post{ 
+	@media only screen and (min-width: $desktop) { padding-right: 20px; }
+}
+.comment-body{ padding: 20px; }
+.comment-list li{ list-style: none;
+}
+
+ul,ol{ padding: 0; margin : 0 0 20px;
+	li{ color: $paragraph_color; list-style-position: inside;
+    list-style: '🔯'; line-height: 1.4; margin-bottom: 5px;
+  }
+	ul,ol{ margin-left: 20px; }
+
+  @media only screen and (min-width: $desktop) {
+    li{ margin: 0 0 15px; } 
+  }
+}
+
+/*----- Form ----*/
+input, textarea{ border: 1px solid #000; border-radius: 0; transition: 0.7s all ease; 
+  margin-bottom: 15px; box-sizing: border-box; max-width: 100%;
+  &:focus{ box-shadow: 4px 4px 5px #999; }
+
+  &[type='submit'] { max-width: 200px; margin : 0 auto 20px; }
+}
+
+textarea , .wpcf7-form{ padding: 20px; }
+
+
+/*-------------- Button -----------------*/
+select, .btn, button, input , input[type='submit']{ padding: $small_padding; vertical-align: middle; 
+	&:focus{ outline: none; }
+	@media only screen and (min-width: $xdesktop) { padding: $max_padding; }
+	@media only screen and (min-width: $xxdesktop) { padding: $mid_padding; }	
+}
+
+input[type='submit'] , .btn, button{ font-weight: #666; border: 1px solid #000; letter-spacing: 2px; 
+  background : $button_bg; text-transform: uppercase; color: $button_text_color;
+	&:hover { background: $button_bg_hover; transition: 0.7s ease; color: $button_text_color; }
+}
+.btn{ border: 2px solid #000; font-weight: bold;
+	&.primary{ color: #000; background: #fff; 
+    &:hover{ background: $button_bg; }
+  }
+	&.secondary{ 
+    &:hover{ color: #000; background: #fff; }
+  }
+	&.small{  }
+}
+/*-------------- Button Ends -----------------*/
+
+/*---------- Grid Columns -------*/
+.container, .site-content{ padding: 0 15px; width: 100%; margin: 0 auto; box-sizing: border-box; 
+	@media only screen and (min-width: $desktop) { max-width: 95vw; }
+	@media only screen and (min-width: 1366px) { max-width: 1200px; }
+}
+
+.hv_sidebar{
+	@media only screen and (min-width: $desktop) {
+		.widget-area, .content-area{ display: inline-block; vertical-align: top; width: 100%; }
+		.content-area{ max-width: calc(100% - 325px); }
+		.widget-area{ max-width: 320px; padding-right: 0; }
+	}
+}
+
+.d_grid{ 
+	@media only screen and (min-width: $tablet) { 
+    &.col2, &.col4{ grid-template-columns: 1fr 1fr; }
+  }
+  @media only screen and (min-width: $desktop) { 
+		grid-gap: 25px;
+		&.col3{ grid-template-columns: 1fr 1fr 1fr; }
+		&.col4{ grid-template-columns: 1fr 1fr 1fr 1fr; }
+		&.col5{ grid-template-columns: 1fr 1fr 1fr 1fr 1fr; }
+	}
+}
+
+body .features{ grid-gap: 25px; margin: 45px 0 145px;
+  li{ list-style: none;text-align: center; }
+  img{ margin: 0 auto;  width: auto; margin: 0 auto 20px; 
+  display: block; }
+}
+
+.colored_grid{
+&:nth-child(3n + 1){ background: #ffd597; }
+  &:nth-child(3n -1){ background: #ffe2b8; }
+  &:nth-child(3n){ background: #fff6ea; }
+  &:hover{ box-shadow: 2px 2px 5px #999; transition: 0.7s all ease; }
+}
+/*---------- Grid Columns Ends -------*/
+
+/*--------- Widget Search --------*/
+.widget-area{ 
+  @media only screen and (min-width: $desktop) { padding: 0 15px; }
+}
+.widget_search{ position: relative; margin-bottom: 20px;
+  .screen-reader-text{ display: none; }
+  .search-field , label{ display: block; width: 100%; }
+  .search-submit{ position: absolute; right: 0; top: 0; }
+}
+
+.widget_categories{
+  li{ list-style: none; display: inline-block; margin: 0 0 15px; padding: 0 ;
+    a{ background: #efefef; padding: 10px 15px; border: 1.5px solid #f5e3e3; font-weight: 600;
+    letter-spacing: 1.5px; text-transform: uppercase; }
+  }
+  h2{ margin: 0; padding: 20px 0; text-transform: uppercase; letter-spacing: 5px; }
+}
+
+
+/*---- Error Page ---*/
+.error404{ background-position: center top -300px; background-image: url('img/404_page.jpg'); background-repeat: no-repeat; background-color: #000;
+  .page-title , h2{ text-transform: uppercase; letter-spacing: 2px; }
+  .site-content{ max-width: 100%; padding: 150px 15px;
+  }
+  h2{ color: #686868; margin-bottom: 15px; }
+  .content-area{ margin : 0 auto; display: block; }
+  .page-title{ font-size: 100px; text-shadow: -1px 2px 3px #FFF; margin-bottom: 0;
+  }
+}
+
+/*--- Blogs ---*/
+.blogs .blog {
+  img{ height: 250px; width: 100%; object-position: center; object-fit: cover; margin-bottom: 15px; }
+  h5{ text-transform: uppercase; letter-spacing: 2px; color: $link_hover_color; }
+
+}
+
+
+/******************** Reset SCSS Ends **********************/
+@import "header.scss";
+@import "footer.scss";
+@import "comments.scss";
+@import "home.scss";
+@import "about.scss";
+@import "services.scss";
+@import "contact.scss";

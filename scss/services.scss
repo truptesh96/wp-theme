@@ -1,0 +1,15 @@
+.services{
+	.service{ padding: 20px; text-align: center; box-shadow: 0 0 10px #f2f2f2;
+		img{ margin: 0 auto 20px; display: block; opacity: 0.7; }
+		h5{ text-transform: uppercase; }
+		p{ height: 110px; overflow-y: hidden; }
+	
+		&:hover{ box-shadow: 0 0 10px #f19322;
+			h5, p, img{ color: #f19322; transition: 0.5s all ease; opacity: 1; }
+		}
+	}
+}
+
+.category-service{
+	.post-thumbnail{ display: none; }
+}

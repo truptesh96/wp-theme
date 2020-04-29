@@ -1,0 +1,71 @@
+/******** Header ******/
+.site-header{ background: #fff; padding: 15px 0;
+	.site_logo, .site_menu{ display: inline-block; vertical-align: middle; width: 100%; }
+	.site_logo{ max-width: 240px; padding-right: 15px; }
+	.site_menu{ max-width: calc(100% - 245px); text-align: right; }
+
+
+	&.sticky{ position: fixed; top: 0; left: 0; width: 100%; box-shadow:  0  0 10px #f19322;
+	z-index: 9999; transition: 0.5s all ease; padding: 7px 0; }
+
+}
+.entry-header{ background: transparent; margin-bottom: 20px;
+	.entry-title{ margin: 0; 
+		@media only screen and (min-width: $desktop) { font-size: 26px; }
+	}
+}
+
+/*--------- Site Navigation ---------*/
+@keyframes menu_anim{
+	0%{ opacity: 0; transform: translateY(-50px); }
+	100%{ opacity: 1; transform: translateY(0px); }
+}
+.site_menu{ 
+	a{ padding: 10px 15px; font-weight: 600; text-transform: uppercase; }
+
+	li{ list-style: none; margin: 0; }
+	.menu{ display: none; text-align: left; }
+	.menu-toggle{ font-size: 0; border: none; background: #000; width: 30px; position: relative; 
+	height: 2px; padding: 0;
+		&:before , &:after{ content:''; position: absolute; left: 0; height: 2px; width: 100%; 
+		background: #000; display: block; }
+		&:after{ top: -10px; }
+		&:before{ bottom: -10px; }
+	}
+
+	&.toggled{ max-width: 100vw; height: 100vh; overflow: scroll; width: 100vw; position: fixed; top: 0; left: 0; 
+		background: #000; box-sizing: border-box; padding: 110px 15px 40px;
+		.menu-toggle{ position: fixed; top: 40px; right: 20px; background: transparent;
+			&:before , &:after{ background: #fff; top: 50%; }
+			&:after{ transform: rotate(45deg) translateY(-52%); }
+			&:before{ transform: rotate(-45deg) translateY(-52%); }
+		}
+		.menu{ display: block; animation: menu_anim 0.5s ease-in-out; }
+	}
+}
+
+@media only screen and (min-width: $desktop) {
+	.site_menu{ 
+		.menu-toggle{ display: none; }
+		.menu{ display: block; text-align: right; margin: 0;
+			ul{ margin: 0; }
+
+			.sub-menu.show{
+				&:before{ content: ''; height: 15px; width: 15px; background: #000; position: absolute; top: -7px; right: 60px; 
+				transform: rotate(45deg); }
+				li{ display: block; }
+			}
+			.sub-menu{ display: none; position: absolute; right: -0px; top: 100%; width: 350px; 
+				text-align: left; background: #000; z-index: 9;
+				.sub-menu{ left: 100%; top: 0; }
+			}
+			li{ display: inline-block; vertical-align: middle; vertical-align: top; 
+			position: relative;
+				a{ 
+					&:hover { > .sub-menu{ display: block; } }
+				}
+			}
+		}
+	}
+	.current-menu-item > a{ color: $link_hover_color; }
+}
